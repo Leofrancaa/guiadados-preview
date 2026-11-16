@@ -112,7 +112,8 @@ export function useSalesFilters() {
       restore();
     },
     /** true quando o período termina hoje e o dia ainda está em andamento. */
-    incompleteDay: range.fim === today,
+    // Demonstração: o dia de hoje já vem completo.
+    incompleteDay: false,
   };
 }
 

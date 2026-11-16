@@ -5,6 +5,7 @@ import {
   daysBetween,
   isIsoDate,
   isSituacao,
+  todayInStore,
   type Situacao,
 } from "@/lib/vendas";
 import { VendasNaoConfiguradas } from "@/lib/vendas-server";
@@ -35,7 +36,10 @@ export function parseRange(
   params: URLSearchParams,
 ): { ini: string; fim: string; situacao: Situacao } | null {
   const ini = params.get("ini");
-  const fim = params.get("fim");
+  let fim = params.get("fim");
+  // Os dados vão só até hoje.
+  const hoje = todayInStore();
+  if (isIsoDate(fim) && fim > hoje) fim = hoje;
   const situacao = params.get("situacao") ?? "todas";
   if (
     !isIsoDate(ini) ||

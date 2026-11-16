@@ -450,7 +450,6 @@ const MERCADO: Segmento = {
     "Véspera do Dia das Mães": 1.2,
     "Black Friday": 1.1,
   },
-  fechaEm: ["Natal", "Ano Novo"],
   pagamentos: [
     ["PIX", 0.36, 0.9],
     ["DÉBITO", 0.27, 1.0],
@@ -909,7 +908,6 @@ const ROUPAS: Segmento = {
     "Terça de Carnaval": 0.3,
     "Véspera de Ano Novo": 1.6,
   },
-  fechaEm: ["Natal", "Ano Novo", "Sexta-feira Santa"],
   pagamentos: [
     ["CRÉDITO PARCELADO", 0.36, 1.45],
     ["CRÉDITO À VISTA", 0.22, 1.0],
@@ -1364,7 +1362,6 @@ const PET: Segmento = {
     manha: [[10, 1, 1.4]],
   },
   eventos: { "Véspera de Natal": 1.6, "Black Friday": 1.8, Natal: 0.4 },
-  fechaEm: ["Natal", "Ano Novo"],
   pagamentos: [
     ["CRÉDITO", 0.42, 1.25],
     ["PIX", 0.33, 0.85],
@@ -1471,15 +1468,23 @@ const SALAO: Segmento = {
   resumo: "Cortes, escovas, coloração, tranças, unhas e estética.",
   exemplos: ["Escova", "Tranças box braids", "Manicure"],
   sobre:
-    "salão de beleza com duas unidades em Salvador (Graça e Caminho das Árvores): vende SERVIÇOS (corte, escova, coloração, tranças, manicure, sobrancelha) e alguns produtos; cada atendimento é um 'pedido'; fecha domingo e segunda",
+    "salão de beleza com duas unidades em Salvador (Graça e Caminho das Árvores): vende SERVIÇOS (corte, escova, coloração, tranças, manicure, sobrancelha) e alguns produtos; cada atendimento é um 'pedido'; abre todos os dias, com horário reduzido na segunda e no domingo",
   termo: "atendimento",
   pedidosDia: 62,
-  dow: [0, 0.85, 0.85, 0.95, 1.25, 1.55, 0],
+  dow: [0.45, 0.85, 0.85, 0.95, 1.25, 1.55, 0.35],
   meses: [1.15, 1.25, 0.9, 0.9, 1.05, 1.0, 0.9, 0.9, 0.92, 0.98, 1.0, 1.4],
   crescimento: 0.13,
   abre: 9,
   fecha: 20,
-  horarios: [null, [9, 20], [9, 20], [9, 20], [9, 20], [8, 19], null],
+  horarios: [
+    [10, 18],
+    [9, 20],
+    [9, 20],
+    [9, 20],
+    [9, 20],
+    [8, 19],
+    [9, 14],
+  ],
   horaPedidos: [
     [10.5, 1, 1.6],
     [15.5, 1.1, 2],
@@ -1497,7 +1502,6 @@ const SALAO: Segmento = {
     "Véspera do Dia das Mães": 1.5,
     "Véspera de São João": 1.3,
   },
-  fechaEm: ["Natal", "Ano Novo", "Carnaval", "Sexta-feira Santa"],
   pagamentos: [
     ["PIX", 0.45, 0.9],
     ["CRÉDITO", 0.33, 1.25],
@@ -1519,7 +1523,7 @@ const SALAO: Segmento = {
     P("CORTE FEMININO", "UN", 90, "cabelo", 3, 1, "dia"),
     P("CORTE MASCULINO", "UN", 50, "cabelo", 2.6, 1, "dia"),
     P("ESCOVA", "UN", 60, "cabelo", 4, 1, "dia", {
-      dow: [0, 0.8, 0.8, 0.9, 1.3, 1.6, 0],
+      dow: [0.6, 0.8, 0.8, 0.9, 1.3, 1.6, 0.5],
     }),
     P("HIDRATAÇÃO", "UN", 80, "cabelo", 2, 1, "dia"),
     P("COLORAÇÃO", "UN", 180, "cabelo", 1.4, 1, "dia"),

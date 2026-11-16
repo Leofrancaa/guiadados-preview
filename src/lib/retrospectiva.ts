@@ -119,7 +119,8 @@ export function retroRange(
   if (ini > today) return null;
   const end = mes === null ? `${ano}-12-31` : lastDayOfMonth(ano, mes);
   let fim = end < today ? end : today;
-  const excluiHoje = fim === today && ini < today;
+  // Demonstração: hoje já vem completo e entra nos recordes.
+  const excluiHoje = false;
   if (excluiHoje) fim = shiftDate(today, -1);
   return { ini, fim, tipo: mes === null ? "ano" : "mes", excluiHoje };
 }

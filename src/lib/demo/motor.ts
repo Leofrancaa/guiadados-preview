@@ -262,7 +262,7 @@ function gerarDia(m: Modelo, data: string): Dia {
     dia >= 5 && dia <= 7 ? 1.04 : dia >= 20 && dia <= 22 ? 1.03 : 1;
   const ruido = Math.exp(rnd.normal() * 0.06);
   const pedidos = Math.max(
-    0,
+    Math.ceil(seg.pedidosDia * 0.15),
     Math.round(
       seg.pedidosDia *
         seg.dow[dow] *
@@ -463,25 +463,16 @@ function diaAte(m: Modelo, data: string, minutos: number): Dia {
 }
 
 // ------------------------------------------------------------ "agora"
-function agoraNaLoja(now = new Date()) {
-  const partes = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "America/Sao_Paulo",
-    hour: "2-digit",
-    minute: "2-digit",
-    hourCycle: "h23",
-  }).format(now);
-  const [h, mi] = partes.split(":").map(Number);
-  return h * 60 + mi;
-}
 
 const hhmm = (min: number) =>
   `${String(Math.floor(min / 60)).padStart(2, "0")}:${String(min % 60).padStart(2, "0")}`;
 
-/** Hoje e o horário da última "coleta" (a cada 30 min, como no painel real). */
+/**
+ * Hoje e o horário de corte. Na demonstração o dia de hoje já vem completo
+ * (corte no fim do dia): todo dia até hoje tem vendas, e nada depois de hoje.
+ */
 function relogio() {
-  const hoje = todayInStore();
-  const agora = agoraNaLoja();
-  return { hoje, corte: Math.max(0, agora - (agora % 30)) };
+  return { hoje: todayInStore(), corte: 24 * 60 };
 }
 
 function diaVisivel(m: Modelo, data: string, hoje: string, corte: number) {
@@ -498,16 +489,19 @@ function ultimoDiaComVenda(m: Modelo) {
       dia.hp.forEach((v, h) => {
         if (v > 0) ultimaHora = h;
       });
-      const min = d === hoje ? Math.max(0, corte - 3) : ultimaHora * 60 + 52;
+      const min = ultimaHora * 60 + 52;
       return { data: d, pedido: `${d}T${hhmm(min)}:00` };
     }
   }
   return { data: null, pedido: null };
 }
 
-function atualizadoEm() {
-  const { hoje, corte } = relogio();
-  return `${hoje}T${hhmm(corte)}:00-03:00`;
+/** Última "coleta": alguns minutos depois do último pedido. */
+function atualizadoEm(ultimoPedido: string | null) {
+  if (!ultimoPedido) return null;
+  const [d, h] = ultimoPedido.split("T");
+  const [hh] = h.split(":").map(Number);
+  return `${d}T${String(Math.min(23, hh + 1)).padStart(2, "0")}:00:00-03:00`;
 }
 
 // ------------------------------------------------------------ períodos
@@ -650,7 +644,7 @@ function acumular(
 function contexto(ini: string, fim: string) {
   const { hoje, corte } = relogio();
   const ant = periodoAnterior(ini, fim);
-  const antCorte = fim === hoje ? corte : null;
+  const antCorte = fim === hoje && corte < 24 * 60 ? corte : null;
   return { hoje, corte, ant, antCorte };
 }
 
@@ -700,7 +694,7 @@ export function painelVendas(
       ultimo_dia: ult.data,
       ultimo_pedido: ult.pedido,
     },
-    atualizado_em: atualizadoEm(),
+    atualizado_em: atualizadoEm(ult.pedido),
     produtos_cobertura: null,
     resumo: {
       faturamento: r2(a.fat),

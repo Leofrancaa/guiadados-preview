@@ -108,7 +108,7 @@ export async function dataPack(ini: string, fim: string, situacao: Situacao) {
       inicio: ini,
       fim,
       dias: vendas.periodo.dias,
-      incluiHojeParcial: fim === todayInStore(),
+      incluiHojeParcial: false,
       periodoAnterior: {
         inicio: vendas.periodo.ant_ini,
         fim: vendas.periodo.ant_fim,
