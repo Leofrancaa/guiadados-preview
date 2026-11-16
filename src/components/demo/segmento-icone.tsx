@@ -7,6 +7,7 @@ import {
   Shirt,
   ShoppingCart,
   Store,
+  Tractor,
   UtensilsCrossed,
   type LucideProps,
 } from "lucide-react";
@@ -20,6 +21,7 @@ const icones = {
   IceCreamCone,
   PawPrint,
   Scissors,
+  Tractor,
 } as const;
 
 export function SegmentoIcone({

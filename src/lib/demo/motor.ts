@@ -29,6 +29,7 @@ const ITENS_POR_PEDIDO: Record<string, number> = {
   acai: 2.2,
   pet: 1.9,
   salao: 1.5,
+  agro: 2.1,
 };
 
 // Ajuste fino do tamanho da compra (kg e itens vendidos em quantidade).
