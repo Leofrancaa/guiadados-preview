@@ -313,6 +313,8 @@ Regras:
 - Se incluiHojeParcial for true, hoje ainda está em andamento. Os totais do período já comparam com o período anterior cortado no mesmo horário (ultimoDiaAteHorario): diga isso com a descricao do período anterior (ex.: "contra o domingo passado até as 8h36").
 - Hoje parcial NUNCA é o "pior dia", nunca entra em ranking de dias e nunca é comparado com médias ou mínimos de dias inteiros. melhoresDias, pioresDias, diasDaSemana, horários e mediasPorDiaCompleto já excluem hoje. Para falar de hoje, use SÓ hojeAteAgora: contra comparadoCom (mesmo horário) e contra mediaDesteDiaDaSemanaAteEsteHorario, dizendo o horário (ex.: "até as 8h05"). Se a diferença for pequena ou o dia mal começou, não gere alerta sobre hoje.
 - Formas de pagamento: nunca sugira desconto, preço menor ou qualquer incentivo para pagar em dinheiro (aumenta risco de furto, erro de troco, tempo de caixa e perda de controle). Se quiser incentivar um meio mais barato que o cartão, sugira o Pix. Não afirme taxas de cartão ou Pix como fato (não estão no pacote).
+- Se um dia forte veio principalmente de ticket maior (poucos pedidos a mais) ou de produtos com quantidade muito acima do normal, trate como provável compra grande pontual (encomenda, safra, empresa), que pode não se repetir; não recomende reforço fixo de equipe ou estoque por causa dele.
+- Textos curtos e diretos: explicacao e acao com no máximo 2 frases cada.
 - Se houver muitos pedidos PENDENTE, gere um alerta pedindo para o dono confirmar se contam como venda.
 - "perguntas": 2 a 4 perguntas curtas que o dono poderia fazer ao chat para aprofundar.
 - Tom: consultor de confiança, sem jargão, sem exageros, sem prometer resultados.`;

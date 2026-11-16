@@ -335,6 +335,40 @@ function gerarDia(m: Modelo, data: string): Dia {
   }
   d.hp = inteiros;
 
+  // Compra grande esporádica (encomenda, safra, festa, prefeitura): ~3% dos
+  // dias ganham um pedido avulso com muita quantidade de 1 ou 2 produtos.
+  if (rnd.next() < 0.03) {
+    const candidatos = m.produtos
+      .map((p, i) => ({ p, i }))
+      .filter(({ p, i }) => d.pv[i] > 0 && p.peso >= 0.5);
+    const escolhidos = candidatos
+      .sort(
+        (a, b) => hash(`${data}|${a.p.codigo}`) - hash(`${data}|${b.p.codigo}`),
+      )
+      .slice(0, 1 + Math.floor(rnd.next() * 2));
+    let extra = 0;
+    for (const { p, i } of escolhidos) {
+      const mult = 12 + Math.floor(rnd.next() * 20);
+      const q =
+        p.unidade === "KG"
+          ? r3(p.qtd * mult)
+          : Math.max(10, Math.round((p.qtd * mult) / 5) * 5);
+      const f = r2(q * d.preco[i]);
+      d.pq[i] += q;
+      d.pfat[i] = r2(d.pfat[i] + f);
+      d.pv[i] += 1;
+      d.itens += 1;
+      extra += f;
+    }
+    if (extra) {
+      const h = hs.indexOf(Math.max(...hs));
+      d.hp[h] += 1;
+      d.hf[h] += extra;
+      d.pedidos += 1;
+      d.fat = r2(d.fat + extra);
+    }
+  }
+
   d.pend = 0.02 + rnd.next() * 0.025;
 
   // Formas de pagamento (Pix cresce com o tempo).

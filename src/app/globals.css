@@ -7971,3 +7971,40 @@ table {
   letter-spacing: 0.16em;
   line-height: 1.3;
 }
+
+/* Demonstração: ajustes de celular */
+.fin-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 760px) {
+  .seg-switch {
+    margin: 14px 0 4px;
+  }
+  .brand-demo {
+    align-items: flex-start;
+  }
+  .panel-heading {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .panel-heading > .period-control {
+    align-self: flex-start;
+  }
+  .fin-yoy {
+    width: 100%;
+    table-layout: fixed;
+  }
+  .fin-yoy th,
+  .fin-yoy td {
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 11.5px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .fin-yoy th:first-child {
+    width: 24%;
+  }
+}

@@ -19,7 +19,6 @@ import {
   Sparkles,
   Square,
   SquarePen,
-  Wheat,
 } from "lucide-react";
 import {
   Conversation,
@@ -27,6 +26,7 @@ import {
   ConversationScrollButton,
 } from "./ai-elements/conversation";
 import { MessageResponse } from "./ai-elements/message";
+import { useStickToBottomContext } from "use-stick-to-bottom";
 import { SalesToolbar } from "./sales-filters";
 import { useSalesFilters } from "@/lib/use-sales-filters";
 import { presetOptions } from "@/lib/vendas";
@@ -365,11 +365,16 @@ export function BakeryChat({
         resize="instant"
         aria-live="off"
       >
+        <SemSeguirResposta
+          ultimaPergunta={
+            [...entries].reverse().find((e) => e.role === "user")?.id
+          }
+        />
         <ConversationContent className="chat-transcript">
           {!entries.length ? (
             <div className="chat-empty">
               <span className="chat-welcome-icon">
-                <Wheat size={28} />
+                <Sparkles size={28} />
               </span>
               <h2>O que você quer entender hoje?</h2>
               <p>
@@ -414,6 +419,7 @@ export function BakeryChat({
               <article
                 key={entry.id}
                 className={`chat-entry ${entry.role}`}
+                data-entry={entry.id}
                 aria-label={
                   entry.role === "user" ? "Sua mensagem" : "Resposta da GuIA"
                 }
@@ -583,4 +589,24 @@ export function BakeryChat({
       </div>
     </div>
   );
+}
+
+/**
+ * Ao enviar uma pergunta, leva a pergunta para o topo da área do chat e
+ * para de acompanhar o texto da resposta: quem lê decide quando rolar.
+ */
+function SemSeguirResposta({ ultimaPergunta }: { ultimaPergunta?: string }) {
+  const { stopScroll, scrollRef } = useStickToBottomContext();
+  useEffect(() => {
+    if (!ultimaPergunta) return;
+    const id = requestAnimationFrame(() => {
+      const el = scrollRef.current?.querySelector<HTMLElement>(
+        `[data-entry="${CSS.escape(ultimaPergunta)}"]`,
+      );
+      stopScroll();
+      el?.scrollIntoView({ block: "start", behavior: "smooth" });
+    });
+    return () => cancelAnimationFrame(id);
+  }, [ultimaPergunta, stopScroll, scrollRef]);
+  return null;
 }

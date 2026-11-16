@@ -476,19 +476,21 @@ function DreTabela({ dre }: { dre: Dre }) {
         </div>
       </div>
       <div className="table-scroll">
-        <table className="fin-dre">
-          <tbody>
-            {linhas.map((l) => (
-              <tr key={l.label} className={l.tipo}>
-                <th scope="row">{l.label}</th>
-                <td className="rs-num">{money(l.valor)}</td>
-                <td className="rs-num fin-pct">
-                  {dre.receita ? percent((l.valor / dre.receita) * 100) : "–"}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="fin-scroll">
+          <table className="fin-dre">
+            <tbody>
+              {linhas.map((l) => (
+                <tr key={l.label} className={l.tipo}>
+                  <th scope="row">{l.label}</th>
+                  <td className="rs-num">{money(l.valor)}</td>
+                  <td className="rs-num fin-pct">
+                    {dre.receita ? percent((l.valor / dre.receita) * 100) : "–"}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   );
@@ -757,57 +759,59 @@ function AnoAAno({ dres, hoje }: { dres: Dre[]; hoje: string }) {
             fechados.
           </p>
           {temComparacao ? (
-            <table className="fin-dre fin-yoy">
-              <thead>
-                <tr>
-                  <th scope="col">
-                    <span className="sr-only">Item</span>
-                  </th>
-                  <th scope="col" className="rs-num">
-                    {anoAtual}
-                  </th>
-                  <th scope="col" className="rs-num">
-                    {Number(anoAtual) - 1}
-                  </th>
-                  <th scope="col" className="rs-num">
-                    Variação
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {(
-                  [
-                    ["Receita", atual.receita, antes.receita],
-                    ["Despesas", atual.despesas, antes.despesas],
-                    ["Resultado", atual.resultado, antes.resultado],
-                  ] as const
-                ).map(([label, a, b]) => (
-                  <tr
-                    key={label}
-                    className={label === "Resultado" ? "total" : undefined}
-                  >
-                    <th scope="row">{label}</th>
-                    <td className="rs-num">{moneyShort(a)}</td>
-                    <td className="rs-num">{moneyShort(b)}</td>
-                    <td className="rs-num">{delta(a, b)}</td>
+            <div className="fin-scroll">
+              <table className="fin-dre fin-yoy">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <span className="sr-only">Item</span>
+                    </th>
+                    <th scope="col" className="rs-num">
+                      {anoAtual}
+                    </th>
+                    <th scope="col" className="rs-num">
+                      {Number(anoAtual) - 1}
+                    </th>
+                    <th scope="col" className="rs-num">
+                      Variação
+                    </th>
                   </tr>
-                ))}
-                <tr>
-                  <th scope="row">Margem</th>
-                  <td className="rs-num">
-                    {atual.receita
-                      ? percent((atual.resultado / atual.receita) * 100)
-                      : "–"}
-                  </td>
-                  <td className="rs-num">
-                    {antes.receita
-                      ? percent((antes.resultado / antes.receita) * 100)
-                      : "–"}
-                  </td>
-                  <td className="rs-num" />
-                </tr>
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {(
+                    [
+                      ["Receita", atual.receita, antes.receita],
+                      ["Despesas", atual.despesas, antes.despesas],
+                      ["Resultado", atual.resultado, antes.resultado],
+                    ] as const
+                  ).map(([label, a, b]) => (
+                    <tr
+                      key={label}
+                      className={label === "Resultado" ? "total" : undefined}
+                    >
+                      <th scope="row">{label}</th>
+                      <td className="rs-num">{moneyShort(a)}</td>
+                      <td className="rs-num">{moneyShort(b)}</td>
+                      <td className="rs-num">{delta(a, b)}</td>
+                    </tr>
+                  ))}
+                  <tr>
+                    <th scope="row">Margem</th>
+                    <td className="rs-num">
+                      {atual.receita
+                        ? percent((atual.resultado / atual.receita) * 100)
+                        : "–"}
+                    </td>
+                    <td className="rs-num">
+                      {antes.receita
+                        ? percent((antes.resultado / antes.receita) * 100)
+                        : "–"}
+                    </td>
+                    <td className="rs-num" />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           ) : (
             <p className="fin-empty">
               Ainda não há meses fechados de {anoAtual} para comparar.

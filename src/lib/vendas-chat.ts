@@ -577,10 +577,8 @@ export async function realSalesReport(
                 // Quantidade redonda e muito acima do normal em item vendido
                 // por unidade: cara de encomenda (hipótese, não fato).
                 possibleBulkOrder:
-                  p.unidade.toUpperCase() === "UN" &&
-                  p.qtd >= 50 &&
-                  p.qtd % 10 === 0 &&
-                  p.qtd >= 4 * Math.max(nQtd, 1),
+                  p.qtd >= 3 * Math.max(nQtd, 1) &&
+                  p.qtd - nQtd >= (p.unidade.toUpperCase() === "KG" ? 3 : 8),
               };
             })
             .sort((a, b) => b.extraRevenue - a.extraRevenue)
