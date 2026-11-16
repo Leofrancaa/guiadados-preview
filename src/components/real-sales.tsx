@@ -688,7 +688,7 @@ function SeriesChart({
   );
 }
 
-const heatSteps = ["#f7ece3", "#f0cfb2", "#e3a173", "#cc6c33", "#9c3c0a"];
+const heatSteps = ["#e7e3f7", "#beb2f0", "#8973e3", "#5233cc", "#270a9c"];
 
 function HourHeatmap({ data }: { data: PainelVendas }) {
   const [metric, setMetric] = useState<"pedidos" | "faturamento">("pedidos");

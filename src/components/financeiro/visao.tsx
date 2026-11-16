@@ -44,15 +44,15 @@ import {
 } from "./graficos";
 
 export const COR_GRUPO: Record<Exclude<Grupo, "receita">, string> = {
-  cmv: "#bd480c",
+  cmv: "#6a4bf0",
   pes: "#1f6fa8",
-  ocu: "#e5b85b",
+  ocu: "#775be5",
   imp: "#7a6a9e",
-  srv: "#75886c",
-  fin: "#a2a79d",
+  srv: "#716c88",
+  fin: "#9f9da7",
   inv: "#3f4a43",
   soc: "#c98a8a",
-  cx: "#8d8f8a",
+  cx: "#8b8a8f",
 };
 
 export function VisaoFinanceira({

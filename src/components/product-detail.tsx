@@ -31,7 +31,7 @@ const dataCompleta = {
   month: "2-digit",
   year: "numeric",
 } as const;
-const heat = ["#f7ece3", "#f0cfb2", "#e3a173", "#cc6c33", "#9c3c0a"];
+const heat = ["#e7e3f7", "#beb2f0", "#8973e3", "#5233cc", "#270a9c"];
 
 export function ProductDetail({
   produto,
