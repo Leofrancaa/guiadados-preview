@@ -117,7 +117,7 @@ const PADARIA: Segmento = {
   sobre:
     "padaria e delicatessen com duas lojas em Salvador (Barra e Pituba): pão francês, café da manhã e buffet de almoço por quilo, bolos, tortas, salgados, frios e um pouco de mercearia",
   termo: "pedido",
-  pedidosDia: 560,
+  pedidosDia: 480,
   dow: [1.03, 1, 0.99, 0.98, 1.03, 1.02, 0.8],
   meses: [0.93, 0.9, 0.95, 0.96, 1.0, 1.08, 0.99, 1.0, 0.99, 1.02, 1.01, 1.12],
   crescimento: 0.11,
@@ -631,7 +631,7 @@ const RESTAURANTE: Segmento = {
   sobre:
     "restaurante de comida baiana com duas casas em Salvador (Itapuã e Stella Maris): pratos executivos no almoço, moquecas e porções à noite, feijoada às quartas e sábados, bebidas",
   termo: "conta",
-  pedidosDia: 190,
+  pedidosDia: 150,
   dow: [0.82, 0.88, 0.95, 0.95, 1.12, 1.35, 1.25],
   meses: [1.18, 1.12, 1.05, 0.95, 0.9, 0.9, 1.0, 0.93, 0.92, 0.98, 1.0, 1.15],
   crescimento: 0.09,
@@ -850,7 +850,7 @@ const RESTAURANTE: Segmento = {
       "Operador de caixa",
       "Maître",
     ],
-    porte: 0.65,
+    porte: 0.8,
     margem: 0.12,
   },
 };
@@ -868,7 +868,7 @@ const ROUPAS: Segmento = {
   sobre:
     "loja de moda com duas unidades em Salvador (Pelourinho e Shopping da Bahia): moda praia, vestidos, camisetas, bermudas, calçados e acessórios; vende muito no verão, no Carnaval (fantasias e abadás customizados), Dia das Mães, Black Friday e Natal",
   termo: "venda",
-  pedidosDia: 24,
+  pedidosDia: 13,
   dow: [0.8, 0.82, 0.88, 0.92, 1.12, 1.55, 0.95],
   meses: [
     1.05, 1.15, 0.85, 0.82, 1.05, 0.95, 0.88, 0.85, 0.85, 0.92, 1.12, 1.6,
@@ -1043,7 +1043,7 @@ const ROUPAS: Segmento = {
       "Operadora de caixa",
       "Costureira",
     ],
-    porte: 0.35,
+    porte: 0.25,
     margem: 0.14,
   },
 };
@@ -1061,7 +1061,7 @@ const FARMACIA: Segmento = {
   sobre:
     "farmácia com duas lojas em Salvador (Bonfim e Ribeira): medicamentos isentos de prescrição e genéricos, dermocosméticos, protetor solar, higiene, fraldas e conveniência",
   termo: "venda",
-  pedidosDia: 140,
+  pedidosDia: 80,
   dow: [1.08, 1.02, 1.0, 0.99, 1.02, 0.98, 0.78],
   meses: [
     0.98, 0.95, 0.98, 1.02, 1.06, 1.08, 1.06, 1.0, 0.96, 0.96, 0.96, 1.02,
@@ -1201,7 +1201,7 @@ const FARMACIA: Segmento = {
       "Entregador",
       "Gerente de loja",
     ],
-    porte: 0.45,
+    porte: 0.4,
     margem: 0.09,
   },
 };
@@ -1219,7 +1219,7 @@ const ACAI: Segmento = {
   sobre:
     "açaiteria e sorveteria com duas lojas na orla de Salvador (Ondina e Jardim de Alah): açaí no copo, sorvete por quilo, milk-shakes, picolés e adicionais; depende muito do calor, dos fins de semana e da movimentação da praia",
   termo: "pedido",
-  pedidosDia: 105,
+  pedidosDia: 75,
   dow: [0.72, 0.75, 0.8, 0.85, 1.05, 1.5, 1.6],
   meses: [1.35, 1.3, 1.15, 0.92, 0.75, 0.68, 0.7, 0.78, 0.88, 1.0, 1.12, 1.3],
   crescimento: 0.12,
@@ -1317,7 +1317,7 @@ const ACAI: Segmento = {
       "Supervisor de loja",
       "Entregador",
     ],
-    porte: 0.35,
+    porte: 0.25,
     margem: 0.16,
   },
 };
@@ -1335,7 +1335,7 @@ const PET: Segmento = {
   sobre:
     "pet shop com duas lojas em Salvador (Patamares e Imbuí): rações, petiscos, acessórios, antipulgas e serviços de banho e tosa com hora marcada",
   termo: "venda",
-  pedidosDia: 45,
+  pedidosDia: 40,
   dow: [0.95, 0.92, 0.92, 0.95, 1.1, 1.5, 0.55],
   meses: [1.05, 0.95, 0.95, 0.95, 0.95, 0.95, 1.0, 0.98, 0.98, 1.0, 1.02, 1.25],
   crescimento: 0.1,
@@ -1452,7 +1452,7 @@ const PET: Segmento = {
       "Auxiliar de loja",
       "Médico-veterinário",
     ],
-    porte: 0.4,
+    porte: 0.35,
     margem: 0.13,
   },
 };
@@ -1470,7 +1470,7 @@ const SALAO: Segmento = {
   sobre:
     "salão de beleza com duas unidades em Salvador (Graça e Caminho das Árvores): vende SERVIÇOS (corte, escova, coloração, tranças, manicure, sobrancelha) e alguns produtos; cada atendimento é um 'pedido'; abre todos os dias, com horário reduzido na segunda e no domingo",
   termo: "atendimento",
-  pedidosDia: 38,
+  pedidosDia: 28,
   dow: [0.45, 0.85, 0.85, 0.95, 1.25, 1.55, 0.35],
   meses: [1.15, 1.25, 0.9, 0.9, 1.05, 1.0, 0.9, 0.9, 0.92, 0.98, 1.0, 1.4],
   crescimento: 0.13,
@@ -1572,7 +1572,7 @@ const SALAO: Segmento = {
       "Recepcionista",
       "Auxiliar de limpeza",
     ],
-    porte: 0.4,
+    porte: 0.35,
     margem: 0.17,
   },
 };
