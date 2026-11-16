@@ -22,10 +22,10 @@ export const INICIO = "2025-01-01";
 // Linhas de venda por pedido em cada segmento (calibra a participação de cada produto).
 const ITENS_POR_PEDIDO: Record<string, number> = {
   padaria: 2.4,
-  mercado: 5.2,
-  restaurante: 2.7,
+  mercado: 4.6,
+  restaurante: 2.0,
   roupas: 1.7,
-  farmacia: 2.2,
+  farmacia: 1.8,
   acai: 2.2,
   pet: 1.9,
   salao: 1.5,

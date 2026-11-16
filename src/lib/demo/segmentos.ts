@@ -117,7 +117,7 @@ const PADARIA: Segmento = {
   sobre:
     "padaria e delicatessen com duas lojas em Salvador (Barra e Pituba): pão francês, café da manhã e buffet de almoço por quilo, bolos, tortas, salgados, frios e um pouco de mercearia",
   termo: "pedido",
-  pedidosDia: 1080,
+  pedidosDia: 560,
   dow: [1.03, 1, 0.99, 0.98, 1.03, 1.02, 0.8],
   meses: [0.93, 0.9, 0.95, 0.96, 1.0, 1.08, 0.99, 1.0, 0.99, 1.02, 1.01, 1.12],
   crescimento: 0.11,
@@ -411,7 +411,7 @@ const MERCADO: Segmento = {
   sobre:
     "mercado de bairro com duas lojas em Salvador (Rio Vermelho e Federação): mercearia, açougue, hortifruti, frios, bebidas, higiene e limpeza",
   termo: "compra",
-  pedidosDia: 720,
+  pedidosDia: 400,
   dow: [0.92, 0.88, 0.9, 0.93, 1.08, 1.32, 0.82],
   meses: [0.97, 0.93, 0.98, 0.97, 1.0, 1.02, 0.99, 0.98, 0.97, 1.0, 1.02, 1.16],
   crescimento: 0.07,
@@ -613,7 +613,7 @@ const MERCADO: Segmento = {
       "Fiscal de loja",
       "Entregador",
     ],
-    porte: 1.3,
+    porte: 0.85,
     margem: 0.06,
   },
 };
@@ -631,7 +631,7 @@ const RESTAURANTE: Segmento = {
   sobre:
     "restaurante de comida baiana com duas casas em Salvador (Itapuã e Stella Maris): pratos executivos no almoço, moquecas e porções à noite, feijoada às quartas e sábados, bebidas",
   termo: "conta",
-  pedidosDia: 300,
+  pedidosDia: 190,
   dow: [0.82, 0.88, 0.95, 0.95, 1.12, 1.35, 1.25],
   meses: [1.18, 1.12, 1.05, 0.95, 0.9, 0.9, 1.0, 0.93, 0.92, 0.98, 1.0, 1.15],
   crescimento: 0.09,
@@ -850,7 +850,7 @@ const RESTAURANTE: Segmento = {
       "Operador de caixa",
       "Maître",
     ],
-    porte: 1,
+    porte: 0.65,
     margem: 0.12,
   },
 };
@@ -868,7 +868,7 @@ const ROUPAS: Segmento = {
   sobre:
     "loja de moda com duas unidades em Salvador (Pelourinho e Shopping da Bahia): moda praia, vestidos, camisetas, bermudas, calçados e acessórios; vende muito no verão, no Carnaval (fantasias e abadás customizados), Dia das Mães, Black Friday e Natal",
   termo: "venda",
-  pedidosDia: 82,
+  pedidosDia: 24,
   dow: [0.8, 0.82, 0.88, 0.92, 1.12, 1.55, 0.95],
   meses: [
     1.05, 1.15, 0.85, 0.82, 1.05, 0.95, 0.88, 0.85, 0.85, 0.92, 1.12, 1.6,
@@ -1043,7 +1043,7 @@ const ROUPAS: Segmento = {
       "Operadora de caixa",
       "Costureira",
     ],
-    porte: 0.6,
+    porte: 0.35,
     margem: 0.14,
   },
 };
@@ -1061,7 +1061,7 @@ const FARMACIA: Segmento = {
   sobre:
     "farmácia com duas lojas em Salvador (Bonfim e Ribeira): medicamentos isentos de prescrição e genéricos, dermocosméticos, protetor solar, higiene, fraldas e conveniência",
   termo: "venda",
-  pedidosDia: 540,
+  pedidosDia: 140,
   dow: [1.08, 1.02, 1.0, 0.99, 1.02, 0.98, 0.78],
   meses: [
     0.98, 0.95, 0.98, 1.02, 1.06, 1.08, 1.06, 1.0, 0.96, 0.96, 0.96, 1.02,
@@ -1139,7 +1139,7 @@ const FARMACIA: Segmento = {
       eventos: { Natal: 1.8, "Ano Novo": 2, Carnaval: 1.6 },
     }),
     P("SORO FISIOLÓGICO 500ML", "UN", 8.49, "medicamentos", 1.6, 1.4, "dia"),
-    P("PROTETOR SOLAR FPS 50", "UN", 69.9, "dermocosméticos", 3, 1.05, "dia", {
+    P("PROTETOR SOLAR FPS 50", "UN", 69.9, "dermocosméticos", 2.2, 1.05, "dia", {
       meses: [1.7, 1.6, 1.2, 0.8, 0.6, 0.5, 0.55, 0.65, 0.85, 1.1, 1.4, 1.8],
       eventos: { Carnaval: 2.2 },
     }),
@@ -1151,7 +1151,7 @@ const FARMACIA: Segmento = {
       "UN",
       119.9,
       "dermocosméticos",
-      0.9,
+      0.6,
       1,
       "dia",
       { inicio: "2025-10-06", tendencia: 0.9 },
@@ -1161,7 +1161,7 @@ const FARMACIA: Segmento = {
     P("CREME DENTAL 90G", "UN", 7.49, "higiene pessoal", 2.6, 1.6, "dia"),
     P("ESCOVA DE DENTES", "UN", 12.9, "higiene pessoal", 1.4, 1.3, "dia"),
     P("ABSORVENTE C/16", "UN", 14.9, "higiene pessoal", 1.6, 1.3, "dia"),
-    P("FRALDA INFANTIL PACOTE", "UN", 69.9, "infantil", 2.2, 1.2, "dia"),
+    P("FRALDA INFANTIL PACOTE", "UN", 69.9, "infantil", 1.6, 1.2, "dia"),
     P("LENÇO UMEDECIDO", "UN", 14.9, "infantil", 1.8, 1.4, "dia"),
     P("REPELENTE SPRAY", "UN", 29.9, "conveniência", 1.3, 1, "noite", {
       meses: [1.3, 1.4, 1.6, 1.5, 1.3, 1, 0.8, 0.7, 0.7, 0.8, 0.9, 1.1],
@@ -1201,7 +1201,7 @@ const FARMACIA: Segmento = {
       "Entregador",
       "Gerente de loja",
     ],
-    porte: 1.15,
+    porte: 0.45,
     margem: 0.09,
   },
 };
@@ -1219,7 +1219,7 @@ const ACAI: Segmento = {
   sobre:
     "açaiteria e sorveteria com duas lojas na orla de Salvador (Ondina e Jardim de Alah): açaí no copo, sorvete por quilo, milk-shakes, picolés e adicionais; depende muito do calor, dos fins de semana e da movimentação da praia",
   termo: "pedido",
-  pedidosDia: 360,
+  pedidosDia: 105,
   dow: [0.72, 0.75, 0.8, 0.85, 1.05, 1.5, 1.6],
   meses: [1.35, 1.3, 1.15, 0.92, 0.75, 0.68, 0.7, 0.78, 0.88, 1.0, 1.12, 1.3],
   crescimento: 0.12,
@@ -1317,7 +1317,7 @@ const ACAI: Segmento = {
       "Supervisor de loja",
       "Entregador",
     ],
-    porte: 0.6,
+    porte: 0.35,
     margem: 0.16,
   },
 };
@@ -1335,7 +1335,7 @@ const PET: Segmento = {
   sobre:
     "pet shop com duas lojas em Salvador (Patamares e Imbuí): rações, petiscos, acessórios, antipulgas e serviços de banho e tosa com hora marcada",
   termo: "venda",
-  pedidosDia: 120,
+  pedidosDia: 45,
   dow: [0.95, 0.92, 0.92, 0.95, 1.1, 1.5, 0.55],
   meses: [1.05, 0.95, 0.95, 0.95, 0.95, 0.95, 1.0, 0.98, 0.98, 1.0, 1.02, 1.25],
   crescimento: 0.1,
@@ -1452,7 +1452,7 @@ const PET: Segmento = {
       "Auxiliar de loja",
       "Médico-veterinário",
     ],
-    porte: 0.6,
+    porte: 0.4,
     margem: 0.13,
   },
 };
@@ -1470,7 +1470,7 @@ const SALAO: Segmento = {
   sobre:
     "salão de beleza com duas unidades em Salvador (Graça e Caminho das Árvores): vende SERVIÇOS (corte, escova, coloração, tranças, manicure, sobrancelha) e alguns produtos; cada atendimento é um 'pedido'; abre todos os dias, com horário reduzido na segunda e no domingo",
   termo: "atendimento",
-  pedidosDia: 62,
+  pedidosDia: 38,
   dow: [0.45, 0.85, 0.85, 0.95, 1.25, 1.55, 0.35],
   meses: [1.15, 1.25, 0.9, 0.9, 1.05, 1.0, 0.9, 0.9, 0.92, 0.98, 1.0, 1.4],
   crescimento: 0.13,
@@ -1526,9 +1526,9 @@ const SALAO: Segmento = {
       dow: [0.6, 0.8, 0.8, 0.9, 1.3, 1.6, 0.5],
     }),
     P("HIDRATAÇÃO", "UN", 80, "cabelo", 2, 1, "dia"),
-    P("COLORAÇÃO", "UN", 180, "cabelo", 1.4, 1, "dia"),
-    P("PROGRESSIVA", "UN", 280, "cabelo", 0.6, 1, "dia", { tendencia: -0.3 }),
-    P("TRANÇAS BOX BRAIDS", "UN", 350, "tranças", 0.8, 1, "dia", {
+    P("COLORAÇÃO", "UN", 180, "cabelo", 1.0, 1, "dia"),
+    P("PROGRESSIVA", "UN", 280, "cabelo", 0.4, 1, "dia", { tendencia: -0.3 }),
+    P("TRANÇAS BOX BRAIDS", "UN", 350, "tranças", 0.5, 1, "dia", {
       meses: [2, 2.2, 0.8, 0.7, 0.8, 0.8, 0.8, 0.8, 0.9, 1, 1.1, 1.8],
     }),
     P("NAGÔ / TRANÇA RAIZ", "UN", 150, "tranças", 1, 1, "dia", {
@@ -1536,14 +1536,14 @@ const SALAO: Segmento = {
     }),
     P("MANICURE", "UN", 35, "unhas", 4.5, 1, "dia"),
     P("PEDICURE", "UN", 40, "unhas", 3.4, 1, "dia"),
-    P("ALONGAMENTO EM GEL", "UN", 160, "unhas", 0.9, 1, "dia", {
+    P("ALONGAMENTO EM GEL", "UN", 160, "unhas", 0.7, 1, "dia", {
       tendencia: 0.35,
     }),
     P("DESIGN DE SOBRANCELHA", "UN", 45, "estética", 2.4, 1, "dia"),
-    P("LIMPEZA DE PELE", "UN", 150, "estética", 0.7, 1, "dia"),
+    P("LIMPEZA DE PELE", "UN", 150, "estética", 0.5, 1, "dia"),
     P("KIT MANUTENÇÃO TRANÇAS", "UN", 69.9, "produtos", 0.6, 1, "dia"),
     P("MÁSCARA CAPILAR 300G", "UN", 59.9, "produtos", 0.8, 1, "dia"),
-    P("BOTOX CAPILAR", "UN", 220, "cabelo", 0.6, 1, "dia", {
+    P("BOTOX CAPILAR", "UN", 220, "cabelo", 0.4, 1, "dia", {
       inicio: "2026-02-02",
       tendencia: 0.9,
     }),
@@ -1572,7 +1572,7 @@ const SALAO: Segmento = {
       "Recepcionista",
       "Auxiliar de limpeza",
     ],
-    porte: 0.45,
+    porte: 0.4,
     margem: 0.17,
   },
 };
@@ -1599,7 +1599,7 @@ const AGRO: Segmento = {
   sobre:
     "revenda agropecuária e de materiais com duas lojas na região de Irecê (BA): sementes, adubos, defensivos, irrigação, bombas e material para poços, energia solar, produtos veterinários, ferramentas, material elétrico e de construção. Clientes são produtores rurais (feijão, milho, mamona, hortaliças irrigadas), pecuaristas e moradores da cidade; o plantio de sequeiro se concentra entre outubro e janeiro, e a irrigação e a nutrição animal pesam na seca (junho a outubro). Muita venda é a prazo (boleto)",
   termo: "venda",
-  pedidosDia: 190,
+  pedidosDia: 110,
   dow: [1.12, 1.02, 1.0, 1.0, 1.05, 0.95, 0.15],
   meses: [1.05, 0.9, 0.85, 0.85, 0.88, 0.92, 0.98, 1.0, 1.02, 1.12, 1.25, 1.1],
   crescimento: 0.12,
@@ -1976,7 +1976,7 @@ const AGRO: Segmento = {
       "Operador de caixa",
       "Técnico em irrigação",
     ],
-    porte: 1.4,
+    porte: 1,
     margem: 0.08,
   },
 };
