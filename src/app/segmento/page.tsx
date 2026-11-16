@@ -32,9 +32,9 @@ export default async function SegmentoPage() {
         <h1 id="seg-title">Qual é o tipo do seu negócio?</h1>
         <p>
           Escolha o segmento mais parecido com o seu. O painel abre com uma
-          empresa de exemplo em Salvador, com dois anos de vendas (2025 e 2026
-          até hoje), produtos e datas típicas do setor. Dá para trocar a
-          qualquer momento.
+          empresa de exemplo da Bahia, com dois anos de vendas (2025 e 2026 até
+          hoje), produtos e datas típicas do setor. Dá para trocar a qualquer
+          momento.
         </p>
       </section>
       <form action={escolherSegmento} className="seg-grid">
