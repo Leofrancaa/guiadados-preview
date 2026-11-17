@@ -1599,10 +1599,10 @@ const AGRO: Segmento = {
   sobre:
     "revenda agropecuária e de materiais com duas lojas na região de Irecê (BA): sementes, adubos, defensivos, irrigação, bombas e material para poços, energia solar, produtos veterinários, ferramentas, material elétrico e de construção. Clientes são produtores rurais (feijão, milho, mamona, hortaliças irrigadas), pecuaristas e moradores da cidade; o plantio de sequeiro se concentra entre outubro e janeiro, e a irrigação e a nutrição animal pesam na seca (junho a outubro). Muita venda é a prazo (boleto)",
   termo: "venda",
-  pedidosDia: 92,
+  pedidosDia: 82,
   dow: [1.12, 1.02, 1.0, 1.0, 1.05, 0.95, 0.15],
-  meses: [1.05, 0.9, 0.85, 0.85, 0.88, 0.92, 0.98, 1.0, 1.02, 1.12, 1.25, 1.1],
-  crescimento: 0.12,
+  meses: [1.04, 0.93, 0.9, 0.9, 0.92, 0.94, 0.98, 1.0, 1.0, 1.05, 1.1, 1.04],
+  crescimento: 0.07,
   abre: 7,
   fecha: 18,
   horarios: [
